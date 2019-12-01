@@ -1,0 +1,43 @@
+.cycle-slideshow {
+
+  &__subtitle {
+    position: absolute;
+    bottom: 0;
+    background-color: $mainPinkColorTrans;
+    text-align: center;
+    color: #FFF;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    line-height: 1;
+
+    p {
+      margin-top: .8rem;
+      margin-bottom: .8rem;
+    }
+  }
+
+}
+
+.cycle-pager {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 1003;
+  cursor: pointer;
+}
+
+.cycle-pager span {
+  text-indent: -9999px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: $mainPinkColor;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.cycle-pager .cycle-pager-active {
+  background-color: #FFF;
+}

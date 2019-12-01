@@ -1,5 +1,7 @@
-.logo {
-  /* background: url('../../images/logo/logo.png') no-repeat center center/cover; */
-  /* width: 200px;
-  height: 200px; */
+.logo{
+
+  &__img {
+    display: block;
+    margin-top: 50px;
+  }
 }

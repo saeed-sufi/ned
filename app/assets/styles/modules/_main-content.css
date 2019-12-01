@@ -1,0 +1,6 @@
+.main-content {
+
+  color: $textColor;
+  font-size: 1.1rem;
+  direction: rtl;
+}

@@ -5,5 +5,10 @@
 @import "./base/_vars.css";
 @import "./modules/_wrapper.css";
 @import "./modules/_logo.css";
+@import "./modules/_cycle-slideshow.css";
+@import "./modules/_navbar.css";
+@import "./modules/_row.css";
+@import "./modules/_main-content.css";
+
 
 
