@@ -2,12 +2,11 @@
 
   @mixin clearfix;
 
-
-    padding-left: -45px;
-
+  margin-right: -45px;
+  overflow: hidden;
 
   &--gutters > div {
-    padding-left: 45px;
+    padding-right: 45px;
   }
 
   &--medium-3 {

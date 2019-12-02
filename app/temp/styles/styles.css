@@ -599,8 +599,8 @@ img {
 
 .row {
 
-
-    padding-left: -45px;
+  margin-right: -45px;
+  overflow: hidden;
 }
 
 .row {
@@ -610,7 +610,7 @@ img {
   }
 
 .row--gutters > div {
-    padding-left: 45px;
+    padding-right: 45px;
   }
 
 .row--medium-3 {
