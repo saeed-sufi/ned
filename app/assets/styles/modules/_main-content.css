@@ -3,4 +3,16 @@
   color: $textColor;
   font-size: 1.1rem;
   direction: rtl;
+
+  &__aside {
+    text-align: center;
+    margin-top: 4rem;
+    color: $mainPinkColor;
+  }
+
+  &__aside-hr {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px $mainPinkColor inset;
+  }
 }

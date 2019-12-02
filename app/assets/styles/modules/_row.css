@@ -3,4 +3,15 @@
   @mixin clearfix;
 
 
+    padding-left: -45px;
+
+
+  &--gutters > div {
+    padding-left: 45px;
+  }
+
+  &--medium-3 {
+    float: right;
+    width: 25%;
+  }
 }

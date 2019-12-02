@@ -3,9 +3,10 @@
   margin: auto;
   padding-right: 30px;
   padding-left: 30px;
+  /* border: 1px solid black; */
 
   &--narrow {
-    width: 420px;
+    width: 680px;
     max-width: 100%;
     margin: auto;
   }

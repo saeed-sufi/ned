@@ -1,5 +1,9 @@
 .logo{
 
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+
   &__img {
     display: block;
     margin-top: 50px;
