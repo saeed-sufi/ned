@@ -1,13 +1,8 @@
 .wrapper {
-  max-width:960px;
-  margin: auto;
+  max-width:1200px;
+  margin-left: auto;
+  margin-right: auto;
   padding-right: 30px;
   padding-left: 30px;
-  /* border: 1px solid black; */
-
-  &--narrow {
-    width: 680px;
-    max-width: 100%;
-    margin: auto;
-  }
+  overflow: hidden;
 }

@@ -1,17 +1,26 @@
 .navbar {
   @mixin navbar;
 
-  background-color: $mainGrayColor;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  line-height: 1.4;
+  ul {
+    background-color: $mainGrayColor;
+    /* display: table; */
+  }
+
+  li {
+    float: none;
+    padding: 10px 20px;
+    transition: .3s;
+  }
+
+  li:hover {
+    background-color: $mainPinkColor;
+  }
 
   &--stick {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10000;
+    z-index: 1010;
     margin-bottom: 20px;
   }
 
@@ -22,12 +31,12 @@
   a {
     text-decoration: none;
     color: #FFF;
-    padding: 9px 20px;
+
     transition: .3s;
   }
 
   a:hover {
-    background-color: $mainPinkColor;
+    
   }
 
 }

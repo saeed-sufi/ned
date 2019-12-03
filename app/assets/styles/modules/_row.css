@@ -3,14 +3,13 @@
   @mixin clearfix;
 
   margin-right: -45px;
-  overflow: hidden;
 
   &--gutters > div {
     padding-right: 45px;
   }
 
   &--medium-3 {
-    float: right;
+    float: left;
     width: 25%;
   }
 }
