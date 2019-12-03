@@ -1,16 +1,21 @@
 .get-started {
   
   text-align: center;
-  color: $textColor;
   font-size: 1.1rem;
   
-  &:hover &__item{
-    opacity: .6;
+  &--opacity:hover &__item{
+    opacity: .5;
   }
   
-  & &__item:hover {
+  &--opacity &__item:hover {
     opacity: 1;
     transform:  scale(1.1);
+  }
+
+  &--hr {
+    height: 3px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px $mainPinkColor inset;
   }
   
   &__item {
@@ -24,7 +29,6 @@
   }
 
   &__img {
-    /* display: inline-block; */
     border-radius: 50%;
   }
 
@@ -34,10 +38,7 @@
   
 
   &__item-subtitle {
-    /* display: inline-block; */
-    margin-top: 0;
+      margin-top: 0;
     margin-bottom: 0;
-
-
   }
 }
