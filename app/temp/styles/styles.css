@@ -494,6 +494,11 @@ img {
   overflow: hidden;
 }
 
+.wrapper--large {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
 .logo{
 
   width: 250px;
@@ -608,17 +613,30 @@ img {
 
 .row {
     content: "";
-    display: table;
+    /* display: table; */
     clear: both;
   }
 
 .row--gutters > div {
-    padding-right: 45px;
+    padding-right: 45px
   }
 
-.row--medium-3 {
+.row--gutters-small {
+    margin-right: -10px;
+  }
+
+.row--gutters-small > div {
+    padding-right: 10px;
+  }
+
+.row__medium-3 {
     float: left;
     width: 25%;
+  }
+
+.row__medium-4 {
+    float: left;
+    width: 33.33%;
   }
 
 .main-content {
@@ -646,22 +664,31 @@ img {
   padding-bottom: 1.5rem;
 }
 
+.page-section--padding-b-large {
+    padding-bottom: 3.5rem;
+  }
+
+.page-section--pink {
+    background-color: #B4A6AB;
+  }
+
 .btn a {
     text-decoration: none;
-    margin-right: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
+    margin-right: 0.8rem;
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: #DBCCD0;
     -webkit-transition: .3s;
     transition: .3s;
     color: #FFF;
-    border-radius: 20px;
+    border-radius: 1.2rem;
   }
 
 .btn a:hover {
     background-color: #ABADB3;
+    /* color: #847077 */
   }
 
 .btn--centered {
@@ -671,6 +698,16 @@ img {
 
 .btn--t-margin-large {
     margin-top: 4rem;
+  }
+
+.btn--t-margin-medium {
+    margin-top: 2rem;
+  }
+
+.btn--padding-large a {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 2rem;
   }
 
 .get-started {
@@ -708,6 +745,7 @@ img {
 
 .get-started__img {
     border-radius: 50%;
+    width: 85%;
   }
 
 .get-started > div {
@@ -715,17 +753,53 @@ img {
   }
 
 .get-started__item-subtitle {
-      margin-top: 0;
+    margin-top: 0;
     margin-bottom: 0;
   }
 
 .footer {
-  background-color: #B4A6AB;
   color:#FFF;
+  text-align: center;
 
-
-  
 }
+
+.footer__item-title-b-margin {
+    margin-bottom: 2.5rem;
+  }
+
+.footer__item-subtitle-email a{
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1.1rem;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+
+.footer__item-subtitle-email a:hover {
+      color: #847077;
+    }
+
+.footer__item-col2 {
+
+  }
+
+.footer__item-img {
+
+  }
+
+.gmap__mapouter {
+    position: relative;
+    text-align: right;
+    height: 400px;
+    width: 100%;
+  }
+
+.gmap__canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 400px;
+    width: 100%;
+  }
 
 
 

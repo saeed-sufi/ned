@@ -1,4 +1,12 @@
 .page-section {
   padding-top: 2.5rem;
   padding-bottom: 1.5rem;
+
+  &--padding-b-large {
+    padding-bottom: 3.5rem;
+  }
+
+  &--pink {
+    background-color: $mainPinkColor;
+  }
 }

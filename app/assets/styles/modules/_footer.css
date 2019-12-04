@@ -1,7 +1,28 @@
 .footer {
-  background-color: $mainPinkColor;
   color:#FFF;
+  text-align: center;
 
+  &__item-title-b-margin {
+    margin-bottom: 2.5rem;
+  }
 
-  
+  &__item-subtitle-email a{
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: .3s;
+
+    &:hover {
+      color: #847077;
+    }
+  }
+
+  &__item-col2 {
+
+  }
+
+  &__item-img {
+
+  }
+
 }

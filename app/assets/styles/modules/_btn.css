@@ -1,19 +1,20 @@
 .btn {
   a {
     text-decoration: none;
-    margin-right: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
+    margin-right: 0.8rem;
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: $lighterPinkColor;
     transition: .3s;
     color: #FFF;
-    border-radius: 20px;
+    border-radius: 1.2rem;
   }
 
   a:hover {
     background-color: $mainGrayColor;
+    /* color: #847077 */
   }
 
   &--centered {
@@ -23,5 +24,15 @@
 
   &--t-margin-large {
     margin-top: 4rem;
+  }
+
+  &--t-margin-medium {
+    margin-top: 2rem;
+  }
+
+  &--padding-large a {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 2rem;
   }
 }

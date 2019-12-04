@@ -5,4 +5,9 @@
   padding-right: 30px;
   padding-left: 30px;
   overflow: hidden;
+
+  &--large {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 }
