@@ -1,0 +1,53 @@
+[33mcommit 60c0c8590718c843353a4ebe836d7921f78e8db4[m
+Author: saeed-sufi <saeed-sufi@hotmail.com>
+Date:   Thu Dec 5 21:00:57 2019 +0330
+
+    downloaded npm packages to local repo
+
+[33mcommit 66e7e79abf283e3d19d5d910ac677e810999c5aa[m
+Author: saeed <sufi.geo@gmail.com>
+Date:   Wed Dec 4 14:15:58 2019 +0330
+
+    footer designed
+
+[33mcommit 093c1be77c663ad7df2034a22dafda033b67364b[m
+Author: saeed <sufi.geo@gmail.com>
+Date:   Tue Dec 3 14:24:42 2019 +0330
+
+    all changes updated
+
+[33mcommit 438bbc73c58d44fc90b1b5587e830fa6fb96903e[m
+Author: saeed <sufi.geo@gmail.com>
+Date:   Tue Dec 3 10:28:16 2019 +0330
+
+    padding problem fixed. Main menu problem fixed.
+
+[33mcommit 87682c3b15afb8dc9485771d989dfa36a935a6a2[m
+Author: saeed <sufi.geo@gmail.com>
+Date:   Mon Dec 2 15:30:09 2019 +0330
+
+    get-started section is not correctly padded
+
+[33mcommit be176b34f338bc773db50f6f8938e055d37e5195[m
+Author: saeed <sufi.geo@gmail.com>
+Date:   Mon Dec 2 14:15:19 2019 +0330
+
+    added main content and page sections
+
+[33mcommit 3e9e343384834455adbe06f6e7613e04d1715229[m
+Author: saeed <sufi.geo@gmail.com>
+Date:   Sun Dec 1 15:28:07 2019 +0330
+
+    added slideshow, main menu and logo
+
+[33mcommit ec32cf9271b29f5b5545538afe924384edb6516c[m
+Author: saeed <sufi.geo@gmail.com>
+Date:   Sun Dec 1 08:22:52 2019 +0330
+
+    gulpfile is configuered
+
+[33mcommit 3f54823fa3b766ace98d26c8f7f69ecbdadaa077[m
+Author: saeed <sufi.geo@gmail.com>
+Date:   Sat Nov 30 12:46:12 2019 +0330
+
+    first commit

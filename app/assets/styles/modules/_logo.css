@@ -8,4 +8,13 @@
     display: block;
     margin-top: 50px;
   }
+
+  &__subtitle {
+    text-align: center;
+    background-color: $mainPinkColor;
+    color: #FFF;
+    padding: .1rem 0;
+    line-height: .6;
+
+  }
 }

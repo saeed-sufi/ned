@@ -33,7 +33,7 @@ gulp.task('watch',['styles'], function() {
     }
   }) 
 
-  watch('./app/index.html', function() {
+  watch('./app/*.html', function() {
     gulp.start('html');
   })
 

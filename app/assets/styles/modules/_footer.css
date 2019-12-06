@@ -13,12 +13,13 @@
     transition: .3s;
 
     &:hover {
-      color: #847077;
+      color: $darkPinkColor;
     }
   }
 
   &__item-col2 {
-
+    border-left: 1px solid $darkPinkColor;
+    border-right: 1px solid $darkPinkColor;
   }
 
   &__item-img {
