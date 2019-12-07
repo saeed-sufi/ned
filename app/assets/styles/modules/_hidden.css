@@ -1,0 +1,11 @@
+.hidden {
+
+  &--at-medium {
+    display: none;
+    
+    @mixin atMedium {
+        display: inline;
+    }
+  }
+
+}
