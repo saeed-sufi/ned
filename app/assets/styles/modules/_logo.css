@@ -6,7 +6,10 @@
 
   &__img {
     display: block;
-    margin-top: 50px;
+
+    @mixin atMedium {
+      margin-top: 50px;
+    }
   }
 
   &__subtitle {

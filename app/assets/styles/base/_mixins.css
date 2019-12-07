@@ -21,3 +21,9 @@
     clear: both;
   }
 }
+
+@define-mixin atMedium {
+  @media (min-width: 763px) {
+    @mixin-content;
+  }
+}
