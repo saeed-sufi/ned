@@ -1,7 +1,6 @@
 .btn {
   a {
     text-decoration: none;
-    margin-right: 0.8rem;
     padding-right: 1.2rem;
     padding-left: 1.2rem;
     padding-top: 5px;
@@ -10,6 +9,10 @@
     transition: .3s;
     color: #FFF;
     border-radius: 1.2rem;
+  }
+
+  &--r-margin-small a {
+    margin-right: 0.8rem;
   }
 
   a:hover {

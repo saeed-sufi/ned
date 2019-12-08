@@ -2,9 +2,10 @@
   color:#FFF;
   text-align: center;
 
-  &__item-title-b-margin {
-    margin-bottom: 2.5rem;
-  }
+    &__item-title-b-margin {
+      margin-bottom: 2.5rem;
+    }
+  
 
   &__item-subtitle-email a{
     color: #FFF;
@@ -18,12 +19,11 @@
   }
 
   &__item-col2 {
-    border-left: 1px solid $darkPinkColor;
-    border-right: 1px solid $darkPinkColor;
-  }
 
-  &__item-img {
-
+    @mixin atMedium {
+      border-left: 1px solid $darkPinkColor;
+      border-right: 1px solid $darkPinkColor;
+    }
   }
 
 }

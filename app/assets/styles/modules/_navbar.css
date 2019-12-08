@@ -2,41 +2,69 @@
   @mixin navbar;
 
   ul {
-    background-color: $mainGrayColor;
-    /* display: table; */
+
+    @mixin atMedium {
+      background-color: $mainGrayColor;
+    }
   }
 
   li {
-    float: none;
-    padding: 10px 20px;
-    transition: .3s;
+    float: left;
+    width: 33%;
+
+    @mixin atMedium {
+      float: none;
+      width: auto;
+    }
   }
 
   li:hover {
     background-color: $mainPinkColor;
   }
 
-  &--stick {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1010;
-    margin-bottom: 20px;
-  }
-
-  &__current-item {
-    background-color: $mainPinkColor;
-  }
-
   a {
     text-decoration: none;
     color: #FFF;
-
     transition: .3s;
+    padding: .5rem 1.2rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: $mainPinkColor;
+    display: block;
+
+    @mixin atMedium {
+      width: auto;
+      float: none;
+      background-color: inherit;
+    }
   }
 
-  a:hover {
-    
+
+  &--stick {
+    @mixin atMedium {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1010;
+      margin-bottom: 20px;
+    }
   }
 
+  &__current-item {
+
+    @mixin atMedium {
+      background-color: $mainPinkColor;
+    }
+  }
+
+
+
+}
+
+nav {
+  /* margin-right: -10px; */
+
+  @mixin atMedium {
+    /* margin-right: auto; */
+  }
 }
