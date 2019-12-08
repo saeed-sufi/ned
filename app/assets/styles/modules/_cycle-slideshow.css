@@ -1,5 +1,6 @@
 .cycle-slideshow {
 
+  
   &__subtitle {
     position: absolute;
     bottom: 0;
@@ -9,11 +10,23 @@
     width: 100%;
     box-sizing: border-box;
     z-index: 1000;
-    line-height: 1;
+    line-height: .9;
+    font-size: .8rem;
 
     p {
-      margin-top: .8rem;
-      margin-bottom: .8rem;
+      margin-top: .4rem;
+      margin-bottom: .4rem;
+    }
+
+    @mixin atMedium {
+
+      font-size: 1rem;
+
+      p {
+        margin-top: .8rem;
+        margin-bottom: .7rem;
+      }
+  
     }
   }
 

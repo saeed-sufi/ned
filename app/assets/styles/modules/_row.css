@@ -16,30 +16,54 @@
     padding-right: 5px;
     padding-left: 5px;
   }
-  
-  &__medium-3 {
-    float: left;
-    width: 25%;
-  }
-  
-  &__medium-6 {
+
+  &__small-6 {
     float: left;
     width: 50%;
   }
+  
+  &__small-4 {
+    float: left;
+    width: 33.33%;
+  }
+  
+  &__small-3 {
+    float: left;
+    width: 25%;
+  }
 
-  &__medium-6--larger {
+  &__small-6--larger {
     width: 65%
   }
 
-  &__medium-6--smaller {
+  &__small-6--smaller {
     width: 35%;
   }
-  
+
+
   @mixin atMedium {
 
     &__medium-4 {
       float: left;
       width: 33.33%;
+    }
+    
+    &__medium-3 {
+      float: left;
+      width: 25%;
+    }
+    
+    &__medium-6 {
+      float: left;
+      width: 50%;
+    }
+
+    &__medium-6--larger {
+      width: 65%
+    }
+
+    &__medium-6--smaller {
+      width: 35%;
     }
   }
     
