@@ -2,6 +2,8 @@
   @mixin navbar;
 
   ul {
+    
+
 
     @mixin atMedium {
       background-color: $mainGrayColor;
@@ -27,7 +29,7 @@
     color: #FFF;
     transition: .3s;
     padding: .5rem 1.2rem;
-    margin-right: 5px;
+		margin-right: 5px;
     margin-bottom: 5px;
     background-color: $mainPinkColor;
     display: block;
@@ -62,9 +64,9 @@
 }
 
 nav {
-  /* margin-right: -10px; */
+  margin-right: -10px;
 
   @mixin atMedium {
-    /* margin-right: auto; */
+    margin-right: auto;
   }
 }

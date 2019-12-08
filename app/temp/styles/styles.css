@@ -620,7 +620,7 @@ img {
     -webkit-transition: .3s;
     transition: .3s;
     padding: .5rem 1.2rem;
-    margin-right: 5px;
+		margin-right: 5px;
     margin-bottom: 5px;
     background-color: #B4A6AB;
     display: block;
@@ -653,12 +653,14 @@ img {
   }
   }
 
-/* margin-right: -10px; */
+nav {
+  margin-right: -10px;
+}
 
 @media (min-width: 763px) {
 
 nav {
-    /* margin-right: auto; */
+    margin-right: auto
 }
   }
 
