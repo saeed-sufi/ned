@@ -2,9 +2,14 @@
   max-width:1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
   overflow: hidden;
+
+  @mixin atSmall {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 
   &--large {
     padding-left: 60px;

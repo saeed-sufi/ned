@@ -37,7 +37,11 @@
 
   &__img {
     border-radius: 50%;
-    width: 85%;
+    width: 70%;
+
+    @mixin atMedium {
+      width: 85%;
+    }
   }
 
   & > div {
@@ -48,7 +52,7 @@
   &__item-subtitle {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: .9rem;
+    font-size: 1rem;
 
     @mixin atMedium {
       font-size: 1.1rem;

@@ -17,6 +17,9 @@
     padding-left: 5px;
   }
 
+  @mixin atSmall {
+
+  
   &__small-6 {
     float: left;
     width: 50%;
@@ -39,7 +42,7 @@
   &__small-6--smaller {
     width: 35%;
   }
-
+}
 
   @mixin atMedium {
 

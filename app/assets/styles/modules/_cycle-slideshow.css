@@ -11,16 +11,19 @@
     box-sizing: border-box;
     z-index: 1000;
     line-height: .9;
-    font-size: .8rem;
+    font-size: .7rem;
 
     p {
       margin-top: .4rem;
       margin-bottom: .4rem;
     }
 
+    @mixin atSmall {
+      font-size: 1rem;
+    }
+    
     @mixin atMedium {
 
-      font-size: 1rem;
 
       p {
         margin-top: .8rem;
@@ -34,21 +37,30 @@
 
 .cycle-pager {
   position: absolute;
-  top: 10px;
+  top: 5px;
   width: 100%;
   text-align: center;
   z-index: 1003;
   cursor: pointer;
+
+  @mixin atSmall {
+    top: 10px;
+  }
 }
 
 .cycle-pager span {
   text-indent: -9999px;
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   background-color: $mainPinkColor;
   border-radius: 50%;
   margin-right: 5px;
+
+  @mixin atSmall {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .cycle-pager .cycle-pager-active {

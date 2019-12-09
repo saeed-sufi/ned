@@ -6,7 +6,6 @@
       margin-bottom: 2.5rem;
     }
   
-
   &__item-subtitle-email a{
     color: #FFF;
     text-decoration: none;
@@ -15,6 +14,15 @@
 
     &:hover {
       color: $darkPinkColor;
+    }
+
+  }
+
+  &__item-subtitle {
+    margin-bottom: 2rem;
+
+    @mixin atMedium {
+      margin-bottom: 0;
     }
   }
 

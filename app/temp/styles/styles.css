@@ -489,10 +489,18 @@ img {
   max-width:1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
   overflow: hidden;
 }
+
+@media (min-width: 460px) {
+
+.wrapper {
+    padding-right: 30px;
+    padding-left: 30px
+}
+  }
 
 .wrapper--large {
     padding-left: 60px;
@@ -547,7 +555,7 @@ img {
             box-sizing: border-box;
     z-index: 1000;
     line-height: .9;
-    font-size: .8rem;
+    font-size: .7rem;
   }
 
 .cycle-slideshow__subtitle p {
@@ -555,12 +563,15 @@ img {
       margin-bottom: .4rem;
     }
 
-@media (min-width: 763px) {
+@media (min-width: 460px) {
 
 .cycle-slideshow__subtitle {
-
       font-size: 1rem
   }
+  }
+
+@media (min-width: 763px) {
+
 
       .cycle-slideshow__subtitle p {
         margin-top: .8rem;
@@ -570,22 +581,37 @@ img {
 
 .cycle-pager {
   position: absolute;
-  top: 10px;
+  top: 5px;
   width: 100%;
   text-align: center;
   z-index: 1003;
   cursor: pointer;
 }
 
+@media (min-width: 460px) {
+
+.cycle-pager {
+    top: 10px
+}
+  }
+
 .cycle-pager span {
   text-indent: -9999px;
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   background-color: #B4A6AB;
   border-radius: 50%;
   margin-right: 5px;
 }
+
+@media (min-width: 460px) {
+
+.cycle-pager span {
+    width: 10px;
+    height: 10px
+}
+  }
 
 .cycle-pager .cycle-pager-active {
   background-color: #FFF;
@@ -633,11 +659,22 @@ img {
     color: #FFF;
     -webkit-transition: .3s;
     transition: .3s;
-    padding: .5rem 1.2rem;
-		margin-right: 5px;
-    margin-bottom: 5px;
+    padding: .3rem 1rem;
+		margin-right: 2px;
+    margin-bottom: 2px;
     background-color: #B4A6AB;
     display: block;
+    font-size: .8rem;
+  }
+
+@media (min-width: 460px) {
+
+.navbar a {
+      font-size: 1rem;
+      padding: .5rem 1.2rem;
+      margin-right: 5px;
+      margin-bottom: 5px
+  }
   }
 
 @media (min-width: 763px) {
@@ -667,14 +704,12 @@ img {
   }
   }
 
-nav {
-  margin-right: -10px;
-}
+/* margin-right: -10px; */
 
 @media (min-width: 763px) {
 
 nav {
-    margin-right: auto
+    /* margin-right: auto; */
 }
   }
 
@@ -703,27 +738,31 @@ nav {
     padding-left: 5px;
   }
 
-.row__small-6 {
+@media (min-width: 460px) {
+
+  
+  .row__small-6 {
     float: left;
     width: 50%;
   }
-
-.row__small-4 {
+  
+  .row__small-4 {
     float: left;
     width: 33.33%;
   }
-
-.row__small-3 {
+  
+  .row__small-3 {
     float: left;
     width: 25%;
   }
 
-.row__small-6--larger {
+  .row__small-6--larger {
     width: 65%
   }
 
-.row__small-6--smaller {
+  .row__small-6--smaller {
     width: 35%;
+  }
   }
 
 @media (min-width: 763px) {
@@ -755,9 +794,16 @@ nav {
 .main-content {
 
   color: #545454;
-  font-size: 1.1rem;
+  font-size: 1rem;
   direction: rtl;
 }
+
+@media (min-width: 460px) {
+
+.main-content {
+    font-size: 1.1rem
+}
+  }
 
 .main-content__aside {
     text-align: center;
@@ -773,9 +819,17 @@ nav {
   }
 
 .page-section {
-  padding-top: 2.5rem;
+  /* padding-top: rem; */
   padding-bottom: 1.5rem;
 }
+
+@media (min-width: 460px) {
+
+.page-section {
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem
+}
+  }
 
 @media (min-width: 763px) {
 
@@ -790,8 +844,8 @@ nav {
 
 .btn a {
     text-decoration: none;
-    padding: 0px .8rem;
-    font-size: .8rem;
+    font-size: 1rem;
+    padding: .2rem 1.2rem;
     background-color: #DBCCD0;
     -webkit-transition: .3s;
     transition: .3s;
@@ -799,11 +853,27 @@ nav {
     border-radius: 1.2rem;
   }
 
+.btn--small a {
+    padding: 0px .5rem;
+    font-size: .7rem;
+
+  }
+
+@media (min-width: 460px) {
+
+.btn--small a {
+      font-size: .9rem;
+      padding: 0px .8rem
+
+  }
+  }
+
 @media (min-width: 763px) {
 
-.btn a {
+.btn--small a {
       font-size: 1rem;
       padding: .2rem 1.2rem
+
   }
   }
 
@@ -880,7 +950,14 @@ nav {
 
 .get-started__img {
     border-radius: 50%;
-    width: 85%;
+    width: 70%;
+  }
+
+@media (min-width: 763px) {
+
+.get-started__img {
+      width: 85%
+  }
   }
 
 .get-started > div {
@@ -890,7 +967,7 @@ nav {
 .get-started__item-subtitle {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: .9rem;
+    font-size: 1rem;
 
   }
 
@@ -918,11 +995,23 @@ nav {
     font-size: 1.1rem;
     -webkit-transition: .3s;
     transition: .3s;
+
   }
 
 .footer__item-subtitle-email a:hover {
       color: #847077;
     }
+
+.footer__item-subtitle {
+    margin-bottom: 2rem;
+  }
+
+@media (min-width: 763px) {
+
+.footer__item-subtitle {
+      margin-bottom: 0
+  }
+  }
 
 @media (min-width: 763px) {
 

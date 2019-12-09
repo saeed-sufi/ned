@@ -1,8 +1,12 @@
 .main-content {
 
   color: $textColor;
-  font-size: 1.1rem;
+  font-size: 1rem;
   direction: rtl;
+
+  @mixin atSmall {
+    font-size: 1.1rem;
+  }
 
   &__aside {
     text-align: center;
