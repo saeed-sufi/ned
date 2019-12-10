@@ -33,5 +33,7 @@ function is responsible for this. These first arguments are the **hooks** that w
 run at the end of the page loading. 
 
 
+In order to go live with your website, first install **all-in-one wp migration** plugin and export the wp data and import it in your from your admin live wordpress import the data. 
+
 
 
