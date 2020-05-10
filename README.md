@@ -4,7 +4,9 @@
 
 1- Install xampp
 
-2- Install wordpress on htdocs folder of xampp installation
+2- Install wordpress on htdocs folder of xampp installation. You can access the website by writing "localhost/nameofthewebsitefolder" in the browser address bar. Then go to admin panel of MySQL in xampp to create the database for your website. 
+
+* If you need to have backup of your local site, first copy the wordpress folder which is located in xampp/htdocs and paste it somewhere. Then go to MySQL panel click on website database name and go to export tab to get a copy of your database. You can import the database by first deleting the corrupted database and then importing the backup database.
 
 3- Create a theme folder on wp-content/themes
  
