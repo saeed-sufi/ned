@@ -11,7 +11,7 @@
 * Create a theme folder on wp-content/themes
  
  Inside the theme folder it is necessary to have at list two files: **1- index.php and 2- style.css**. These names matter! The screenshot.png file
- should be **1200*900**. 
+ should be **1200*900**. You can write some information about the theme in style.css file.
  
 * Modify wp-config.php to activate the debugging mode:
 
