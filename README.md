@@ -1,10 +1,10 @@
-# ned
+# ned Project: Learning Wordpress, PHP and JS
 
 ## Introduction
 
-* "Custom POst Types" and "Custom Fields" allow us to programmatically relate different content together.
+* "Custom Post Types" and "Custom Fields" allow us to programmatically relate different content together.
 
-## Wordpress Developement Procedure
+## Wordpress Developement Environment Setup
 
 * Install xampp
 
@@ -24,6 +24,8 @@
   * define( 'WP_DEBUG_LOG', true );
   
   * define( 'WP_DEBUG_DISPLAY', false );
+
+## How Wordpress works
 
 * Wordpress knows what post to query from the database based on the url (permalink or slug) that we visit. On home page wordpress automatically query the 10 most recent posts. 
 
