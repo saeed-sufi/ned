@@ -1,5 +1,9 @@
 # ned
 
+## Introduction
+
+* "Custom POst Types" and "Custom Fields" allow us to programmatically relate different content together.
+
 ## Wordpress Developement Procedure
 
 * Install xampp
