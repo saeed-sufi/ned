@@ -1,9 +1,5 @@
 # ned Project: Learning Wordpress, PHP and JS
 
-## Introduction
-
-* "Custom Post Types" and "Custom Fields" allow us to programmatically relate different content together.
-
 ## Wordpress Developement Environment Setup
 
 * Install xampp
@@ -24,6 +20,8 @@
   * define( 'WP_DEBUG_LOG', true );
   
   * define( 'WP_DEBUG_DISPLAY', false );
+  
+ * In order to go live with your website, first install **all-in-one wp migration** plugin and export the wp data and import it in your from your admin live wordpress import the data. 
 
 ## How Wordpress works
 
@@ -44,10 +42,10 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * `wp_footer()` at the end of the **footer.php** file (right before the ending body tag) is responsible for activating the js files which typically run at the end of the page loading. 
 
- * In order to make generic menus and showing the menu link in admin panel, we need to add `register_nav_menu('headerMenu', 'Header Menu')` to `add_theme_support` hook. Then in the html, use `wp_nav_menu` function to use the menu you created in the admin panel.
+* In order to make generic menus and showing the menu link in admin panel, we need to add `register_nav_menu('headerMenu', 'Header Menu')` to `add_theme_support` hook. Then in the html, use `wp_nav_menu` function to use the menu you created in the admin panel.
 
+* "Custom Post Types" and "Custom Fields" allow us to programmatically relate different content together.
 
-In order to go live with your website, first install **all-in-one wp migration** plugin and export the wp data and import it in your from your admin live wordpress import the data. 
 
 
 
