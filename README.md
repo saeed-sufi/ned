@@ -20,8 +20,11 @@
   * define( 'WP_DEBUG_LOG', true );
   
   * define( 'WP_DEBUG_DISPLAY', false );
+  When new errors are catched, a `debug.log` file will automatically be created in `wp-content` folder.
   
  * In order to go live with your website, first install **all-in-one wp migration** plugin and export the wp data and import it in your from your admin live wordpress import the data. 
+ 
+ * In order to load fresh js and css files on each reload of the page, we need to change the version of the file when calling it in `wp_enqueue_scripts`.
 
 ## How Wordpress works
 
@@ -37,8 +40,9 @@ various php files that you need to create hereafter such as page.php and single.
 * `wp_head()` function lets wordpress to be in control of the `head` section so that if you add a plugin later and it has its own css files, wordpress would take care of them too.
 
 * `functions.php` lets us to have a conversation with the wordpress system. All the other php files in theme folder are actually template files which dictates how an html file is shown to the user. 
+
 * `add_action()` function is very important because this is the function that tells wordpress **what to do when!**. The first argument of this 
-function is responsible for this. These first arguments are the **hooks** that we need to hook on to. 
+function is responsible for this. These first arguments are the **hooks** that we need to hook on to. The second argument is the name of the function we want to wordpress to run.
 
 * `wp_footer()` at the end of the **footer.php** file (right before the ending body tag) is responsible for activating the js files which typically run at the end of the page loading. 
 
@@ -46,6 +50,37 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * "Custom Post Types" and "Custom Fields" allow us to programmatically relate different content together.
 
+## Common Wordpress Functions
+```
+bloginfo('the_title') | bloginfo('description')
+the_post()
+have_posts()
+the_permalink()
+the_title()
+the_content()
+get_footer()
+get_header()
+wp_head() // lets wordpress to be in control of the head section
+wp_footer() 
+wp_enqueue_style('university_styles', get_stylesheet_uri())
+add_theme_support('title-tag') // there are many features we can enable using this function.
+site_url()
+get_the_ID() // gives the id of the current page that is viewed. 
+wp_get_post_parent_ID() // It takes an id of a page or a post and gives back the id of its parent.
+wp_list_pages(array()) // This outputs links to every page on the website.
+get_pages(array()) // return the pages in memory.
+language_attributes() // place this inside the opening html tag to tell web browsers what language our website is using. This depends on the language you set in the wordpress setting.
+<meta charset="<?php bloginfo("charset") ?>" > 
+<body <?php body_class() ?> > // This gives you all types of information you might need to know about the page that you are viewing and you can use the class names in developing the `css` and `javascript` for  your website.
+register_nav_menu('headerMenuLocation', 'Header Menu Location') // If you want to add the menu option to the appearance menu of wordpress dashboard. Its hook is `after_setup_theme`
 
+```
+
+## Common wordpress hooks
+```
+// First argument of the below functions, is the name of the wordpress "event" that we want to "hook" on to.
+add_action('wp_enqueue_scripts', 'functionname') // to attach js and css files to our project
+add_action('after_setup_theme', 'functionname') // 
+```
 
 
