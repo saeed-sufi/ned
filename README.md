@@ -50,6 +50,8 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * "Custom Post Types" and "Custom Fields" allow us to programmatically relate different content together.
 
+* `front-page.php` is used to power the home page and `index.php` is used to output the generic blog listing screen.
+
 ## Common Wordpress Functions
 ```
 bloginfo('the_title') | bloginfo('description')
@@ -73,6 +75,16 @@ language_attributes() // place this inside the opening html tag to tell web brow
 <meta charset="<?php bloginfo("charset") ?>" > 
 <body <?php body_class() ?> > // This gives you all types of information you might need to know about the page that you are viewing and you can use the class names in developing the `css` and `javascript` for  your website.
 register_nav_menu('headerMenuLocation', 'Header Menu Location') // If you want to add the menu option to the appearance menu of wordpress dashboard. Its hook is `after_setup_theme`
+wp_nav_menu(array())
+is_page()
+the_author_posts_link()
+the_time('F')
+get_the_category_list(',')
+paginate_links()
+is_category() // will return true if we are on a category archive screen
+is_author() // will return true if we are on a author archive screen
+the_archive_title()
+the_archive_description()
 
 ```
 
