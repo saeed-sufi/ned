@@ -52,11 +52,15 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * `front-page.php` is used to power the home page and `index.php` is used to output the generic blog listing screen.
 
+* Wordpress makes default queries based on the links of each page or posts. If we need to query whatever we want from the database, we need to use costume query `WP_Query()`.
+
+* Remember to always use `wp_reset_postdata()` after the while loop of the costume query ends. This way everything get backs to the state it was back when we hadn't still defined a custome query. 
+
 ## Common Wordpress Functions
 ```
 bloginfo('the_title') | bloginfo('description')
 the_post()
-have_posts()
+have_posts() // the_post() and have_posts() are tied to difault query. 
 the_permalink()
 the_title()
 the_content()
@@ -83,8 +87,10 @@ get_the_category_list(',')
 paginate_links()
 is_category() // will return true if we are on a category archive screen
 is_author() // will return true if we are on a author archive screen
-the_archive_title()
+the_archive_title() // manages all types of titles of archive posts
 the_archive_description()
+wp_trim_words(the_content(), 18) // Extract only the number of words you need from a content.
+wp_reset_postdata()
 
 ```
 
