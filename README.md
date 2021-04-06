@@ -22,9 +22,30 @@
   * define( 'WP_DEBUG_DISPLAY', false );
   When new errors are catched, a `debug.log` file will automatically be created in `wp-content` folder.
   
- * In order to go live with your website, first install **all-in-one wp migration** plugin and export the wp data and import it in your from your admin live wordpress import the data. 
+* In order to hide extra files and folders from vs code sidebar while developing wordpress themes, add following code to `settings.json`: 
+```
+    "files.exclude": {
+        "*.php":true,
+        "license.txt": true,
+        "readme.html": true,
+        ".htaccess": true,
+        "node_modules/":true,
+        "wp-admin/": true,
+        "wp-includes":true,
+        "wp-content/uploads/":true,
+        "wp-content/plugins/":true,
+        "wp-content/index.php": true,
+        "wp-content/themes/index.php": true,
+        "wp-content/themes/closeup_studio/index.php": true,
+        "wp-content/themes/closeup_studio/screenshot.png": true,
+        "wp-content/themes/closeup_studio/style.css": true,
+        "wp-content/debug.log": true,
+    }
+```
+
+* In order to go live with your website, first install **all-in-one wp migration** plugin and export the wp data and import it in your from your admin live wordpress import the data. 
  
- * In order to load fresh js and css files on each reload of the page, we need to change the version of the file when calling it in `wp_enqueue_scripts`.
+* In order to load fresh js and css files on each reload of the page, we need to change the version of the file when calling it in `wp_enqueue_scripts`.
 
 ## How Wordpress works
 
