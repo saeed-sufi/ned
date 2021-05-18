@@ -6,6 +6,10 @@
 
 * Install wordpress on htdocs folder of xampp installation. You can access the website by writing "localhost/nameofthewebsitefolder" in the browser address bar. Then go to admin panel of MySQL in xampp to create the database for your website. 
 
+* Remember to delete `install.php` file from `wp-admin` folder in `public-html` root of the server.
+
+* always use `wp-config.php` file to edit and install wordpress instead of using the wordpress gui installer.
+
 * If you need to have backup of your local site, first copy the wordpress folder which is located in xampp/htdocs and paste it somewhere. Then go to MySQL panel click on website database name and go to export tab to get a copy of your database. You can import the database by first deleting the corrupted database and then importing the backup database.
 
 * Create a theme folder on wp-content/themes
@@ -51,6 +55,8 @@
 
 * Wordpress knows what post to query from the database based on the url (permalink or slug) that we visit. On home page wordpress automatically query the 10 most recent posts. 
 
+* the root directory of wordpress help load and setup wordpress. The files inside `wp-includes` folder provides functions and classes that wordpress uses. No logic is implemented in them and they can do nothing on their own. 
+
 * **index.php** acts as a fall-back or the last line of defence when there is no other file to power the link url that we are asking for.
 **page.php** is what powers pages posts and **single.php** is what powers general posts. In summary, wordpress is always on the lookout for 
 different php files in the theme directory to see which one to use to power the specific url that we are asking for.
@@ -77,10 +83,37 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * Remember to always use `wp_reset_postdata()` after the while loop of the costume query ends. This way everything get backs to the state it was back when we hadn't still defined a custome query. 
 
+* A hook is a way for you to listen to an event and execute code when that event happens. This is what Wordpress calls the plugins API.
+
+* It's the best practice to always name your functions with a prefix so that we don't run into any naming conflicts between plugins.
+## Misc notes
+
+* `plugintable.com` is a website which gathers all the popular wordpress plugins.
+
+* usefull plugins:
+  * all in one seo
+  * contact form
+  * google xml sitemaps
+
+* Before starting an online shop answer these qs: 1- what are you selling? a. physicall objects b. downloadable digital content c. services. 2- who are you selling to? a. payment portal b. one or multiple samples c. returning the product d. saving purchase bascket e. sharing f. transportation. 3- how do you sell it? a. only online b. both online and shop c. marketer d. selling through other online shops.
+
+* `woocommerce` and `easy digital downloads` are two most popular wp shops. 
+
+* add `xml-prc ping services` so that search engines would be notified about your site updates.
+
+* check your site traffic using `hypestat.com` 
+
+* you can use `poedit` software to translate a theme. 
+
+* `codex` is where Wordpress documents its features and how to use them. `developer` site is where you'll find documentation related to the code of the wordpress core. 
+
+* name `text domain` property of `style.css` header file to your theme name. If you want your themes or plugins to be translate-ready, then set the `text domain` to something unique. It's a unique id for our translations. 
+*  
 ## Common Wordpress Functions
 ```
 bloginfo('the_title') | bloginfo('description')
 the_post()
+echo __FILE__ // this constant stores the full system path to the file it's being used in
 have_posts() // the_post() and have_posts() are tied to difault query. 
 the_permalink()
 the_title()
