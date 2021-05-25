@@ -6,6 +6,8 @@
 
 * Install wordpress on htdocs folder of xampp installation. You can access the website by writing "localhost/nameofthewebsitefolder" in the browser address bar. Then go to admin panel of MySQL in xampp to create the database for your website. 
 
+* A `collation` in database, will determine how the characters are sorted and compared. 
+
 * Remember to delete `install.php` file from `wp-admin` folder in `public-html` root of the server.
 
 * always use `wp-config.php` file to edit and install wordpress instead of using the wordpress gui installer.
@@ -55,9 +57,37 @@
 
 * Wordpress knows what post to query from the database based on the url (permalink or slug) that we visit. On home page wordpress automatically query the 10 most recent posts. 
 
-* the root directory of wordpress help load and setup wordpress. The files inside `wp-includes` folder provides functions and classes that wordpress uses. No logic is implemented in them and they can do nothing on their own. 
+* the root directory of wordpress help load and setup wordpress. The files inside `wp-includes` folder provides functions and classes that help wordpress process requests. No logic is implemented in them and they can do nothing on their own. 
+
+*  The files in the root directory determine what file should be loaded on every page request.
+
+* wordpress uses `index.php` file to handle a majority of requests. But in admin side of the wordpress (files in wp-admin folder) `index.php` file doesn't handle anything. 
 
 * **index.php** acts as a fall-back or the last line of defence when there is no other file to power the link url that we are asking for.
+
+* In xampp panel open apache `php.ini` file and edit the following 3 parameters: 
+```
+ max_execution_time = 500 // by setting this value to a high number you would avoid time_out errors if execution of your scripts takes a bit longer than expected.
+ post_max_size = 50M // this will allow us to submit large requests up to 50mb. 
+ upload_max_filesize = 50M 
+```
+* wordpress goes to theme folder and scan the `file_header` section of the file located in every theme folder to get `meta_information` it needs about a theme.
+
+* the `tags` meta information in the `file_header` of `style.css` file is used by Wordpress theme's repository. If you plan to upload your theme to wp repository it's important to have it. 
+
+* name `text domain` property of `style.css` file header to your theme name. If you want your themes or plugins to be translate-ready, then set the `text domain` to something unique. It's a unique id for our translations. 
+
+* all the theme's logic are placed in `functions.php` file. This file is executed before all the template files. 
+
+* Always use `get_theme_file_path` to point to files as it provides full system path. `get_theme_file_uri` will return full web url.
+
+* When a user makes a request, wp will go to the db and start deciding what needs to be loaded. Theme and plugins will load afterwards. When theme is loaded wp would for `functions.php` file inside theme folder and start executing it line by line. 
+
+* `register`ing a stylesheet will tell wp about a stylesheet where it can be called later. While `enqueue`ing a stylesheet tells wp to load the stylesheet right away. So, it's best to registerfirst and then enqueue.
+
+* Never ever override defautl wp scripts. Including jQuery.
+
+
 **page.php** is what powers pages posts and **single.php** is what powers general posts. In summary, wordpress is always on the lookout for 
 different php files in the theme directory to see which one to use to power the specific url that we are asking for.
 
@@ -107,8 +137,6 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * `codex` is where Wordpress documents its features and how to use them. `developer` site is where you'll find documentation related to the code of the wordpress core. 
 
-* name `text domain` property of `style.css` header file to your theme name. If you want your themes or plugins to be translate-ready, then set the `text domain` to something unique. It's a unique id for our translations. 
-*  
 ## Common Wordpress Functions
 ```
 bloginfo('the_title') | bloginfo('description')
