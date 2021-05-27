@@ -2,10 +2,6 @@
 
 ## Wordpress Developement Environment Setup
 
-* Install xampp
-
-* Install wordpress on htdocs folder of xampp installation. You can access the website by writing "localhost/nameofthewebsitefolder" in the browser address bar. Then go to admin panel of MySQL in xampp to create the database for your website. 
-
 * A `collation` in database, will determine how the characters are sorted and compared. 
 
 * Remember to delete `install.php` file from `wp-admin` folder in `public-html` root of the server.
@@ -13,8 +9,6 @@
 * always use `wp-config.php` file to edit and install wordpress instead of using the wordpress gui installer.
 
 * If you need to have backup of your local site, first copy the wordpress folder which is located in xampp/htdocs and paste it somewhere. Then go to MySQL panel click on website database name and go to export tab to get a copy of your database. You can import the database by first deleting the corrupted database and then importing the backup database.
-
-* Create a theme folder on wp-content/themes
  
  Inside the theme folder it is necessary to have at list two files: **1- index.php and 2- style.css**. These names matter! The screenshot.png file
  should be **1200*900**. You can write some information about the theme in style.css file.
@@ -49,9 +43,7 @@
     }
 ```
 
-* In order to go live with your website, first install **all-in-one wp migration** plugin and export the wp data and import it in your from your admin live wordpress import the data. 
- 
-* In order to load fresh js and css files on each reload of the page, we need to change the version of the file when calling it in `wp_enqueue_scripts`.
+* In order to go live with your website, first install **all-in-one wp migration** plugin and export the wp data and import it in your from your admin live wordpress import the data.
 
 ## How Wordpress works
 
@@ -59,7 +51,7 @@
 
 * the root directory of wordpress help load and setup wordpress. The files inside `wp-includes` folder provides functions and classes that help wordpress process requests. No logic is implemented in them and they can do nothing on their own. 
 
-*  The files in the root directory determine what file should be loaded on every page request.
+*  The files in the root directory of wp installation, determine what file should be loaded on every page request.
 
 * wordpress uses `index.php` file to handle a majority of requests. But in admin side of the wordpress (files in wp-admin folder) `index.php` file doesn't handle anything. 
 
@@ -81,12 +73,11 @@
 
 * Always use `get_theme_file_path` to point to files as it provides full system path. `get_theme_file_uri` will return full web url.
 
-* When a user makes a request, wp will go to the db and start deciding what needs to be loaded. Theme and plugins will load afterwards. When theme is loaded wp would for `functions.php` file inside theme folder and start executing it line by line. 
+* When a user makes a request, wp will go to the db and start deciding what needs to be loaded. Theme and plugins will load afterwards. When theme is loaded wp would look for `functions.php` file inside theme folder and start executing it line by line. 
 
-* `register`ing a stylesheet will tell wp about a stylesheet where it can be called later. While `enqueue`ing a stylesheet tells wp to load the stylesheet right away. So, it's best to registerfirst and then enqueue.
+* `register`ing a stylesheet will tell wp about a stylesheet where it can be called later. While `enqueue`ing a stylesheet tells wp to load the stylesheet right away. So, it's best to register first and then enqueue.
 
 * Never ever override defautl wp scripts. Including jQuery.
-
 
 **page.php** is what powers pages posts and **single.php** is what powers general posts. In summary, wordpress is always on the lookout for 
 different php files in the theme directory to see which one to use to power the specific url that we are asking for.
@@ -103,7 +94,9 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * `wp_footer()` at the end of the **footer.php** file (right before the ending body tag) is responsible for activating the js files which typically run at the end of the page loading. 
 
-* In order to make generic menus and showing the menu link in admin panel, we need to add `register_nav_menu('headerMenu', 'Header Menu')` to `add_theme_support` hook. Then in the html, use `wp_nav_menu` function to use the menu you created in the admin panel.
+* If you have more than one footer or header template, you can include them in other templates via `get_header('v2')` for a template with the title of `header-v2.php`.
+
+* In order to make generic menus and showing the menu link in admin panel, we need to add `register_nav_menu('headerMenu', 'Header Menu')` to `add_theme_support` hook. Then in the html, use `wp_nav_menu` function to display the menu in template.
 
 * "Custom Post Types" and "Custom Fields" allow us to programmatically relate different content together.
 
@@ -115,15 +108,55 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * A hook is a way for you to listen to an event and execute code when that event happens. This is what Wordpress calls the plugins API.
 
-* It's the best practice to always name your functions with a prefix so that we don't run into any naming conflicts between plugins.
+* It's the best practice to always name your functions and handles with a prefix so that we don't run into any naming conflicts between plugins.
+
+* `after_setup_theme` hook is called when theme is loaded internally which means all the functions defined in the `functions.php` is loaded.
+
+* `__` is a specia function created by wordpress. It allows for text to be translated to various languages. You need to pass `text domain` as its second parameter which acts as an id so that wp knows this translation relates to the theme not to other plugins.
+
+* `body_class` function inside the opening `body` tag gives you the classes that wp use to apply to the template. It has default classes applied as default even when you don't add `body_class` function applied. Taking advantage of these classes, is optional. wp adds a class to the `body` tag which tells you about the device size: `device-xm, device-sm ,...`
+
+* use minimal css to style widgets. It's hard to apply it to dynamic sidebars. There might be some trials and errors involved. `before_widget` is a container tag for the whole widget.
+
+* when there is conflicts between our theme styling with default html and css that wp imposes, it's easier to just edit our template css files. 
+
+* even if you are providing your own styling for the widgets, you're required to stylize the default widgets as well. 
+
+* always use `get_the_date` instead of `the_date` function. `the_date` function acts funny with dating posts that are generated in the same date.
+
+* **always** register and then enqueue the styles and scripts because the plugins that do compression, modification and concatenation will only work if you have registered styles and scripts first. 
+
+* `single.php` vs `singular.php`: The post types that come bundled with wp, with the exception of post type posts, do not use `single.php` template. `singular.php` template, is the universal post type template. It doesn't matter if the post type is custome or in-built, the `singular.php` template will be used
+
+* In Gutenberg editor you can use `page break` block to make your post span multiple pages. Then do not forget to use `wp_link_pages()` in your template to link these pages together.
+
+* `WP_Query` class is beneficial in the following contexts: 
+  * add a list of related posts to the current post filtering categories
+  * creating two loops in the same page. ex. FAQ page with questions at the top and answers at the bottom.
+  * creating a custom list of recent posts in the sidebar or the footer.
+  * creating custom queries for taxonomies using more than one taxonomy to define what's displayed.
+
+* Do not use `WP_Query` in the following scenarios:
+  * If all you need to do is changing the posts are being displayed. Instead use a specific template.
+  * If you want to display a few more or less posts than would normally be show. Instead use `pre_get_posts` to modify the main query.
+
+* In pages, when creating loops, you do not need to check if for `have_posts()`. Because wp checks if a page is available and if not, it will load 404 template. 
+
+* You can use `single_post_title` to get the title of the page outside of a loop.
+
+* Use `_e()` to make the text content inside of some pages, translatable.
+
+* Whenever you only need to apply some css to specific pages, it's better to use classes that wp generates by default on `body` element of the page rather than creating a very specific page template.
+
+## Order
+
+* `category.php` is used specifically to display category pages. Unlike category template, `archive.php` template is used for various pieces of pages like tags, dates, ... . It also displays posts in chronological order.
+
+*  Category template is a special type of archive template because it displays a list of posts based on category. 
+
+* Category Template Order: `category-{slug}.php` -> `category-{id}.php` -> `category.php` -> `archive.php` -> `index.php`.
+* 
 ## Misc notes
-
-* `plugintable.com` is a website which gathers all the popular wordpress plugins.
-
-* usefull plugins:
-  * all in one seo
-  * contact form
-  * google xml sitemaps
 
 * Before starting an online shop answer these qs: 1- what are you selling? a. physicall objects b. downloadable digital content c. services. 2- who are you selling to? a. payment portal b. one or multiple samples c. returning the product d. saving purchase bascket e. sharing f. transportation. 3- how do you sell it? a. only online b. both online and shop c. marketer d. selling through other online shops.
 
@@ -137,6 +170,23 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * `codex` is where Wordpress documents its features and how to use them. `developer` site is where you'll find documentation related to the code of the wordpress core. 
 
+* If some code is `pluggable` it means that the code can be extended by third party plugins or wordpress itself. `comment_form()` is an example of such code. That's why it's better to use this function instead of creating the form manually. 
+
+* For preventing spams in comments sections, we'd better use plugins to manage them.
+
+* When you want to do modifications to a value, then you want a function that returns a value rather than output it. 
+
+## Useful plugins
+
+* `plugintable.com` is a website which gathers all the popular wordpress plugins.
+
+* usefull plugins:
+  * all in one seo
+  * contact form
+  * google xml sitemaps
+
+* `FakerPress` to generate dummy content.
+* 
 ## Common Wordpress Functions
 ```
 bloginfo('the_title') | bloginfo('description')
@@ -173,6 +223,9 @@ the_archive_title() // manages all types of titles of archive posts
 the_archive_description()
 wp_trim_words(the_content(), 18) // Extract only the number of words you need from a content.
 wp_reset_postdata()
+comments_template(); comments_open(); get_comments_number();
+post_password_required(); boolean, if it returns true, it means only signed in users can see the post (comment, ...).
+the_comments_pagination(); add this right after the $comments loop.
 
 ```
 
