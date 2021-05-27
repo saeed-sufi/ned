@@ -148,14 +148,32 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * Whenever you only need to apply some css to specific pages, it's better to use classes that wp generates by default on `body` element of the page rather than creating a very specific page template.
 
+* wp doesn't have a template to show posts from a beginning date to the end date.
+
+* A mime type is a way for a program/browser to identify what kind of file is being loaded; similar to extensions. 
+
+* wp considers all file uploads as attachments. 
+
+* By calling the function `the_post`, variable `$post` is created and you can use it anywhere you want.
+
+* custom templates are by default enabled for pages only. 
 ## Order
 
 * `category.php` is used specifically to display category pages. Unlike category template, `archive.php` template is used for various pieces of pages like tags, dates, ... . It also displays posts in chronological order.
 
-*  Category template is a special type of archive template because it displays a list of posts based on category. 
+* Category template is a special type of archive template because it displays a list of posts based on category. 
 
 * Category Template Order: `category-{slug}.php` -> `category-{id}.php` -> `category.php` -> `archive.php` -> `index.php`.
-* 
+
+* Page Template Order: `custom template file` -> `page-{slug}.php` -> `page-{id}.php` -> `page.php` -> `singular.php` -> `index.php`.
+
+* `date` template is used when a user is viewing an archive which belongs to a year, month or day. It's not used very often.
+
+* Date Template Order: `date.php` -> `archive.php` -> `index.php`.
+
+* Attachment Template Order: `mime-type.php` -> `attachment.php` -> `single-attachment-{slug}.php` -> `single.php` -> `singular.php` -> `index.php`.
+
+* we can use pdf viewer or video players in attachment templates by creating specific attachment template for each mime type.
 ## Misc notes
 
 * Before starting an online shop answer these qs: 1- what are you selling? a. physicall objects b. downloadable digital content c. services. 2- who are you selling to? a. payment portal b. one or multiple samples c. returning the product d. saving purchase bascket e. sharing f. transportation. 3- how do you sell it? a. only online b. both online and shop c. marketer d. selling through other online shops.
@@ -180,13 +198,14 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * `plugintable.com` is a website which gathers all the popular wordpress plugins.
 
-* usefull plugins:
-  * all in one seo
-  * contact form
-  * google xml sitemaps
-
+* all in one seo
+* contact form
+* google xml sitemaps
 * `FakerPress` to generate dummy content.
+* `wp quads` to show ads on the any location in the website.
+* `wp subtitle` add subtitle to (custom) posts or pages.
 * 
+
 ## Common Wordpress Functions
 ```
 bloginfo('the_title') | bloginfo('description')
