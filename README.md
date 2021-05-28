@@ -157,6 +157,10 @@ function is responsible for this. These first arguments are the **hooks** that w
 * By calling the function `the_post`, variable `$post` is created and you can use it anywhere you want.
 
 * custom templates are by default enabled for pages only. 
+
+* WordPress recognizes the subfolder page-templates. Therefore, it’s a good idea to store your global page templates in this folder to help keep them organized.
+
+* Archive tags can be used outside of the `LOOP`.
 ## Order
 
 * `category.php` is used specifically to display category pages. Unlike category template, `archive.php` template is used for various pieces of pages like tags, dates, ... . It also displays posts in chronological order.
