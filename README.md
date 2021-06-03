@@ -102,9 +102,9 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * `front-page.php` is used to power the home page and `index.php` is used to output the generic blog listing screen.
 
-* Wordpress makes default queries based on the links of each page or posts. If we need to query whatever we want from the database, we need to use costume query `WP_Query()`.
+* Wordpress makes default queries based on the links of each page or posts. If we need to query whatever we want from the database, we need to use custom query `WP_Query()`.
 
-* Remember to always use `wp_reset_postdata()` after the while loop of the costume query ends. This way everything get backs to the state it was back when we hadn't still defined a custome query. 
+* Remember to always use `wp_reset_postdata()` after the while loop of the custom query ends. This way everything get backs to the state it was back when we hadn't still defined a custom query. 
 
 * A hook is a way for you to listen to an event and execute code when that event happens. This is what Wordpress calls the plugins API.
 
@@ -112,7 +112,7 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * `after_setup_theme` hook is called when theme is loaded internally which means all the functions defined in the `functions.php` is loaded.
 
-* `__` is a specia function created by wordpress. It allows for text to be translated to various languages. You need to pass `text domain` as its second parameter which acts as an id so that wp knows this translation relates to the theme not to other plugins.
+* `__` is a special function created by wordpress. It allows for text to be translated to various languages. You need to pass `text domain` as its second parameter which acts as an id so that wp knows this translation relates to the theme not to other plugins.
 
 * `body_class` function inside the opening `body` tag gives you the classes that wp use to apply to the template. It has default classes applied as default even when you don't add `body_class` function applied. Taking advantage of these classes, is optional. wp adds a class to the `body` tag which tells you about the device size: `device-xm, device-sm ,...`
 
