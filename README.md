@@ -198,6 +198,29 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * When you want to do modifications to a value, then you want a function that returns a value rather than output it. 
 
+* put the following snippet in `.htaccess` file so that website Headers won't expire
+
+```
+## EXPIRES HEADER CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType image/svg "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType application/javascript "access 1 month"
+ExpiresByType application/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 2 days"
+</IfModule>
+## EXPIRES HEADER CACHING ##
+
+```
+
 ## Useful plugins
 
 * `plugintable.com` is a website which gathers all the popular wordpress plugins.
