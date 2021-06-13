@@ -221,6 +221,23 @@ ExpiresDefault "access 2 days"
 
 ```
 
+* Also add following snippet to `.htaccess` to make `http` requests redirect to `https`:
+
+```
+<IfModule mod_rewrite.c>
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+```
+
+* Next add following code to `wp-config.php` to force `https` implementation: 
+
+```
+define(‘FORCE_SSL_LOGIN’, true);
+define(‘FORCE_SSL_ADMIN’, true);
+```
+
 ## Useful plugins
 
 * `plugintable.com` is a website which gathers all the popular wordpress plugins.
