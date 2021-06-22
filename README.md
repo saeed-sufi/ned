@@ -51,6 +51,8 @@
 
 * the root directory of wordpress help load and setup wordpress. The files inside `wp-includes` folder provides functions and classes that help wordpress process requests. No logic is implemented in them and they can do nothing on their own. 
 
+* Custom post types and custom fields allow us allow us to programmatically relate different content together. 
+
 *  The files in the root directory of wp installation, determine what file should be loaded on every page request.
 
 * wordpress uses `index.php` file to handle a majority of requests. But in admin side of the wordpress (files in wp-admin folder) `index.php` file doesn't handle anything. 
@@ -284,7 +286,7 @@ is_category() // will return true if we are on a category archive screen
 is_author() // will return true if we are on a author archive screen
 the_archive_title() // manages all types of titles of archive posts
 the_archive_description()
-wp_trim_words(the_content(), 18) // Extract only the number of words you need from a content.
+echo wp_trim_words(get_the_content(), 18) // Extract only the number of words you need from a content.
 wp_reset_postdata()
 comments_template(); comments_open(); get_comments_number();
 post_password_required(); boolean, if it returns true, it means only signed in users can see the post (comment, ...).
