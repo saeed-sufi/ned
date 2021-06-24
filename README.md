@@ -287,7 +287,8 @@ is_author() // will return true if we are on a author archive screen
 the_archive_title() // manages all types of titles of archive posts
 the_archive_description()
 echo wp_trim_words(get_the_content(), 18) // Extract only the number of words you need from a content.
-wp_reset_postdata()
+wp_reset_postdata();
+get_post_type() // returns the post type whether it's a custom post type, page, or post. good for conditional check.
 comments_template(); comments_open(); get_comments_number();
 post_password_required(); boolean, if it returns true, it means only signed in users can see the post (comment, ...).
 the_comments_pagination(); add this right after the $comments loop.
