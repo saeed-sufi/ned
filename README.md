@@ -96,6 +96,8 @@ function is responsible for this. These first arguments are the **hooks** that w
 
 * `wp_footer()` at the end of the **footer.php** file (right before the ending body tag) is responsible for activating the js files which typically run at the end of the page loading. 
 
+* There are two types of hooks within WordPress: actions and filters. Actions allow you to add or change WordPress functionality, while filters allow you to alter content as it is loaded and displayed to the website user.
+
 * If you have more than one footer or header template, you can include them in other templates via `get_header('v2')` for a template with the title of `header-v2.php`.
 
 * In order to make generic menus and showing the menu link in admin panel, we need to add `register_nav_menu('headerMenu', 'Header Menu')` to `add_theme_support` hook. Then in the html, use `wp_nav_menu` function to display the menu in template.
