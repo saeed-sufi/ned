@@ -22,6 +22,8 @@
   * define( 'WP_DEBUG_DISPLAY', false );
   When new errors are catched, a `debug.log` file will automatically be created in `wp-content` folder.
   
+* Beautify `var_export()` output: `echo '<pre>' . var_export($data, true) . '</pre>';`. Use it instead of `var_dump()`.
+  
 * In order to hide extra files and folders from vs code sidebar while developing wordpress themes, add following code to `settings.json`: 
 ```
     "files.exclude": {
