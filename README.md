@@ -167,6 +167,7 @@ function is responsible for this. These first arguments are the **hooks** that w
 * WordPress recognizes the subfolder page-templates. Therefore, it’s a good idea to store your global page templates in this folder to help keep them organized.
 
 * Archive tags can be used outside of the `LOOP`.
+
 ## Order
 
 * `category.php` is used specifically to display category pages. Unlike category template, `archive.php` template is used for various pieces of pages like tags, dates, ... . It also displays posts in chronological order.
@@ -184,6 +185,7 @@ function is responsible for this. These first arguments are the **hooks** that w
 * Attachment Template Order: `mime-type.php` -> `attachment.php` -> `single-attachment-{slug}.php` -> `single.php` -> `singular.php` -> `index.php`.
 
 * we can use pdf viewer or video players in attachment templates by creating specific attachment template for each mime type.
+
 ## Misc notes
 
 * Before starting an online shop answer these qs: 1- what are you selling? a. physicall objects b. downloadable digital content c. services. 2- who are you selling to? a. payment portal b. one or multiple samples c. returning the product d. saving purchase bascket e. sharing f. transportation. 3- how do you sell it? a. only online b. both online and shop c. marketer d. selling through other online shops.
@@ -243,6 +245,23 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 define(‘FORCE_SSL_LOGIN’, true);
 define(‘FORCE_SSL_ADMIN’, true);
 ```
+
+* To hide wordpress version from header and RSS:
+
+```function remove_wordpress_version() {
+return '';
+}
+add_filter('the_generator', 'remove_wordpress_version'); ```
+
+* and to hide it from css and scripts:
+```
+function remove_version_from_style_js( $src ) {
+if ( strpos( $src, 'ver=' . get_bloginfo( 'version' ) ) )
+$src = remove_query_arg( 'ver', $src );
+return $src;
+}
+add_filter( 'style_loader_src', 'remove_version_from_style_js');
+add_filter( 'script_loader_src', 'remove_version_from_style_js'); ```
 
 ## Useful plugins
 
